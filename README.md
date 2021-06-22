@@ -5,15 +5,13 @@ Deep-learning based model fitting and Gleason score lesion prediction.
 
 ### Referenceing
 If you use this repository in your diffusion MRI work please refer to this citation:
-```
-Vanya Valindrid, Saurabh Singh,  Eleni Chiou,  Eleftheria Panagiotaki, et al. "Non-invasive Gleason Score Classification with VERDICT-MRI," 2021. 29th Annual Meeting of ISMRM.
-```
+Vanya Valindria, Saurabh Singh,  Eleni Chiou,  Eleftheria Panagiotaki, et al. "Non-invasive Gleason Score Classification with VERDICT-MRI," 2021. 29th Annual Meeting of ISMRM.
+
 Full text is available in the document.
 
 ### How to use:
 
-1. For deep learning based model fitting, most of the codes are in MATLAB. Run the following codes in order:
-
+1. For deep learning based model fitting, most of the codes are in MATLAB. You can use the example scan (INN-104-RWB) to run the scripts. Run the following codes in order:
 
 make_training_dataset_DL.m : to generate synthetic data from diffusion models under their own biophysical ranges. Output is the 'database...mat'
 train_MLP_fitting.m: train using the generated synthetic data (.mat) using a simple 3-layer Multi Layer Perceptron (MLP). Once you have the trained model (.sav), you can apply it on patient data (raw DW-MRI data, dependable on protocol).
@@ -26,12 +24,12 @@ save_maps.m: to convert from regression prediction from MLP to parametric maps o
 
 2. For Gleason score (GS) prediction
 
-Install MONAI ->
+Install MONAI -> https://monai.io/
 
 Run:
 ```
 GS_classification.py
-``
+```
 
-Using all/some of the parametric maps obtained from Step 1 and extract the pre-defined lesion ROI, and the ground truth (Gleason score for each lesion).
+We need all/some of the parametric maps obtained from Step 1 and extract the pre-defined lesion ROI, and the ground truth (Gleason score for each lesion). We classify the lesion to 5-point Gleason score using SE-ResNet50, as shown as in the paper above, it gives better accuracy than DenseNet and resNet.
 
