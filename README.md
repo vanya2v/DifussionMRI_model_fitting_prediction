@@ -3,7 +3,7 @@
 Deep-learning based model fitting and Gleason score lesion prediction.
 
 
-### Referenceing
+### Referencing
 If you use this repository in your diffusion MRI work please refer to this citation:
 
 Vanya Valindria, Saurabh Singh,  Eleni Chiou,  Eleftheria Panagiotaki, et al. "Non-invasive Gleason Score Classification with VERDICT-MRI," 29th Annual Meeting of ISMRM, 2021.
@@ -29,7 +29,8 @@ preprocessing.m
 ```
 to preprocess the (registration and denoising/unring etc) raw patient DW-MRI scans
 
-```post_process_DL.m
+```
+post_process_DL.m
 ```
 to obtain the ROI data for input to MLP training
 
@@ -38,7 +39,8 @@ apply_MLP_fitting.py
 ```
 applying trained MLP to the input data (after being pre and post-processed)
 
-```save_maps.m
+```
+save_maps.m
 ```
 to convert from regression prediction from MLP to parametric maps of difussion MRI model 
 
